@@ -55,10 +55,6 @@ class TaskManager:
 
     def get_next_id(self) -> int:
         """Get the next available ID (for UI purposes)"""
-        # Since we don't expose the storage directly, we'll simulate getting the next ID
-        # by checking the current tasks and returning the next number
-        current_ids = set(self.storage._tasks.keys())
-        if not current_ids:
+        if not self.storage._tasks:
             return 1
-
-        return max(current_ids) + 1
+        return max(self.storage._tasks.keys()) + 1

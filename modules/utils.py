@@ -13,9 +13,7 @@ def validate_title(title: str) -> bool:
     Validate task title
     Returns True if title is valid, False otherwise
     """
-    if not title or not title.strip():
-        return False
-    return len(title.strip()) > 0
+    return bool(title and title.strip())
 
 
 def validate_task_id(task_id: str) -> Tuple[bool, Optional[int]]:
