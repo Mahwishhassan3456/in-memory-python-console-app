@@ -1,100 +1,50 @@
-# Phase I: In-Memory Python Console Todo App
+# In-Memory Python Console Application
 
-A simple, in-memory console-based todo application implemented in Python. This application allows users to manage their tasks through a command-line interface without any external dependencies.
+A menu-driven console application that provides full CRUD operations for managing items with in-memory storage only.
 
 ## Features
 
-- Add new tasks with titles and descriptions
-- List all tasks with their completion status
-- Show detailed information about a specific task
-- Update existing tasks
-- Mark tasks as complete/incomplete
-- Delete tasks
-- Clean, intuitive command-line interface
-
-## Requirements
-
-- Python 3.13 or higher
-
-## Installation
-
-1. Clone or download this repository
-2. Navigate to the project directory
-3. Run the application using Python
-
-```bash
-python main.py
-```
-
-## Usage
-
-Once the application is running, you can use the following commands:
-
-- `add "title" ["description"]` - Add a new task
-- `list` - List all tasks
-- `show <id>` - Show details of a specific task
-- `update <id> "title" ["description"]` - Update a task
-- `complete <id>` - Mark task as complete
-- `incomplete <id>` - Mark task as incomplete
-- `delete <id>` - Delete a task
-- `help` - Show help information
-- `quit` or `exit` - Exit the application
-
-### Examples
-
-```bash
-# Add a task
-> add "Buy groceries" "Milk, bread, eggs"
-
-# List all tasks
-> list
-
-# Show details of task #1
-> show 1
-
-# Update task #1
-> update 1 "Buy groceries and cook dinner" "Milk, bread, eggs, chicken"
-
-# Mark task #1 as complete
-> complete 1
-
-# Delete task #1
-> delete 1
-```
+- **Menu-driven CLI**: Easy-to-use interface with numbered options (1-6)
+- **Full CRUD Operations**:
+  - Create: Add new items with auto-incrementing IDs
+  - Read: List all items or view specific items
+  - Update: Modify existing items
+  - Delete: Remove items from storage
+- **Data Validation**: Proper validation for all inputs
+- **Formatted Display**: Clean table-style output for item listings
+- **In-Memory Storage**: All data stored in Python data structures (no persistence)
 
 ## Architecture
 
-The application follows a modular design with clear separation of concerns:
+- `main.py`: Application entry point
+- `models.py`: Data models (Item class with validation)
+- `storage.py`: In-memory storage layer
+- `services.py`: Business logic layer
+- `cli.py`: Command-line interface
+- `demo.py`: Functionality verification script
 
-- `main.py`: Entry point of the application
-- `modules/cli.py`: Command-line interface and user interaction
-- `modules/tasks.py`: Business logic for task operations
-- `modules/storage.py`: In-memory data storage
-- `modules/utils.py`: Utility functions for validation and formatting
-- `tests/test_todo.py`: Unit tests for the application
+## Requirements
 
-## Running Tests
+- Python 3.7+
 
-To run the unit tests:
+## Usage
 
+1. Clone the repository
+2. Run the application:
+   ```bash
+   python main.py
+   ```
+3. Follow the on-screen menu options to manage your items
+
+## Demo
+
+To run the demo/test script:
 ```bash
-python -m pytest tests/test_todo.py -v
+python demo.py
 ```
 
-Or if pytest is available globally:
-
-```bash
-pytest tests/test_todo.py -v
-```
-
-## Data Persistence
-
-This application stores all data in memory only. When the application exits, all tasks are lost. This is intentional for Phase I to keep the implementation simple and focused on core functionality.
-
-## Contributing
-
-This application was developed as part of a Phase I implementation. Future phases may include persistent storage, web interfaces, and additional features.
+This will demonstrate all CRUD operations and verify functionality.
 
 ## License
 
-This project is open-source and available under the MIT License.
+MIT
