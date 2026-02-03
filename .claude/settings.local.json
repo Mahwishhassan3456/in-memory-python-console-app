@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd .gitignore file to exclude cache directories and other unnecessary files\n\n- Added .gitignore to exclude Python cache files \\(__pycache__, *.pyc, etc.\\)\n- Excluded test cache directories \\(.pytest_cache/\\)\n- Excluded coverage reports and other temporary files\n- Keeps repository clean and reduces unnecessary file tracking\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
+    ]
+  }
+}
